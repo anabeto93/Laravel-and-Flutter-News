@@ -28,11 +28,11 @@ class BaseCategoryController extends Controller implements IndexResourceInterfac
     {
         $category = CategoryData::fromRequest($request);
 
-        return $this->category->store($category);
+        return $this->category->create($category);
     }
 
     public function show($id)
     {
-        return $this->category->show($id);
+        return $this->category->find($id);
     }
 }

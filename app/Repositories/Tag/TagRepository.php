@@ -13,12 +13,12 @@ class TagRepository implements TagInterface
         return Tag::all();
     }
 
-    public function show($id)
+    public function find($id)
     {
         return Tag::findOrFail($id);
     }
 
-    public function store(\App\DTO\TagData $tag)
+    public function create(\App\DTO\TagData $tag)
     {
         DB::beginTransaction();
 

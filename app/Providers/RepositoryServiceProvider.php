@@ -15,6 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(\App\Repositories\Category\CategoryInterface::class, \App\Repositories\Category\CategoryRepository::class);
         $this->app->bind(\App\Repositories\Tag\TagInterface::class, \App\Repositories\Tag\TagRepository::class);
+        $this->app->bind(\App\Repositories\Comment\CommentInterface::class, \App\Repositories\Comment\CommentRepository::class);
     }
 
     /**

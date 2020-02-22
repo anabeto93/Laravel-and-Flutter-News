@@ -6,7 +6,7 @@ interface TagInterface
 {
     public function all();
 
-    public function show($id);
+    public function find($id);
 
-    public function store(\App\DTO\TagData $tag);
+    public function create(\App\DTO\TagData $tag);
 }

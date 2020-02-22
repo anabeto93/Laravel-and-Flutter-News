@@ -12,7 +12,7 @@ class CategoryRepository implements CategoryInterface
         return Category::all();
     }
 
-    public function store(\App\DTO\CategoryData $category)
+    public function create(\App\DTO\CategoryData $category)
     {
         DB::beginTransaction();
 
@@ -32,7 +32,7 @@ class CategoryRepository implements CategoryInterface
         return $nc;
     }
 
-    public function show($id)
+    public function find($id)
     {
         return Category::findOrFail($id);
     }

@@ -29,11 +29,11 @@ class BaseTagController extends Controller implements IndexResourceInterface, Sh
     {
         $tag = TagData::fromRequest($request);
 
-        return $this->tag->store($tag);
+        return $this->tag->create($tag);
     }
 
     public function show($id)
     {
-        return $this->tag->show($id);
+        return $this->tag->find($id);
     }
 }
