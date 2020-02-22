@@ -11,4 +11,15 @@ class CategoryController extends BaseCategoryController
     {
         return view('categories.index')->with(['categories' => parent::index()]);
     }
+
+    public function show($id)
+    {
+        return view('categories.show')->with(['category' => parent::show($id)]);
+    }
+
+    public function store(Request $request)
+    {
+        parent::store($request);
+        return redirect()->to('categories.show', ['id' => $category->id])->with('success', 'Category successfully created.');
+    }
 }

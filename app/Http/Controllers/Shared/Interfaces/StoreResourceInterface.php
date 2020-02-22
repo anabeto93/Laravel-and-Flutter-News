@@ -10,5 +10,5 @@ interface StoreResourceInterface
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request);
+    public function store(\Illuminate\Http\Request $request);
 }

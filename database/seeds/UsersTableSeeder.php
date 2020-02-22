@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
             'last_name' => 'User',
             'email' => 'anabeto93@gmail.com'
         ]);
+        
         factory(\App\Models\Admin::class, 1)->create([
             'first_name' => 'Test',
             'last_name' => 'User',
@@ -50,13 +51,14 @@ class UsersTableSeeder extends Seeder
 
         //create post tags
         try {
-        foreach(\App\Models\Post::all() as $post) {
-            \Illuminate\Support\Facades\DB::table('post_tag')->insert([
-                'tag_id' => \App\Models\Tag::select('id')->orderByRaw('RAND()')->first()->id,
-                //'post_id' => \App\Models\Post::select('id')->orderByRaw('RAND()')->first()->id,
-                'post_id' => $post->id
-            ]);
-        }} catch (\Illuminate\Database\QueryException $e) {
+            foreach(\App\Models\Post::all() as $post) {
+                \Illuminate\Support\Facades\DB::table('post_tag')->insert([
+                    'tag_id' => \App\Models\Tag::select('id')->orderByRaw('RAND()')->first()->id,
+                    //'post_id' => \App\Models\Post::select('id')->orderByRaw('RAND()')->first()->id,
+                    'post_id' => $post->id
+                ]);
+            }
+        } catch (\Illuminate\Database\QueryException $e) {
             //do nothing about it
         }
     }
