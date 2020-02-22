@@ -14,7 +14,7 @@ class CategoryData extends DataTransferObject
     /** @var string $color */
     public $color;
 
-    public function fromRequest(\Illuminate\Http\Request $request): self
+    public static function fromRequest(\Illuminate\Http\Request $request): self
     {
         return new self([
             'title' => $request->title,

@@ -9,7 +9,7 @@ class CommentRepository implements CommentInterface
 {
     public function all()
     {
-        return Comment::all();
+        return Comment::paginate(10);
     }
 
     public function find($id)

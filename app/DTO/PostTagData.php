@@ -12,7 +12,7 @@ class PostTagData extends DataTransferObject
     /** @var int $tag_id */
     public $tag_id;
 
-    public function fromRequest(\Illuminate\Http\Request $request) : self
+    public static function fromRequest(\Illuminate\Http\Request $request) : self
     {
         return new self([
             'post_id' => $request->input('post_id'),

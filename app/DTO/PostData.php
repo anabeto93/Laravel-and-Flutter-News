@@ -36,7 +36,7 @@ class PostData extends DataTransferObject
      */
     public $meta_data;
 
-    public static function fromRequest(Request $request): self
+    public static static function fromRequest(\Illuminate\Http\Request $request): self
     {
         return new self([
             'title' => $request->input('title'),

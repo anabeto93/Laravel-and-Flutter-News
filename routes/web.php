@@ -16,15 +16,16 @@ Route::group(['namespace' => 'Web'], function() {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-
-    Route::resource('categories', 'CategoryController');
-    Route::resource('tags', 'TagController');
-    Route::resource('comments', 'CommentController');
-    /*Route::resource('users', 'UserController');
-    Route::resource('admins', 'AdminController');
-    Route::resource('posts', 'PostController');
-    Route::resource('images', 'ImageController');
-    Route::resource('videos', 'VideoController');*/
+    Route::group(['middleware' => ['auth']], function() {
+        Route::resource('categories', 'CategoryController');
+        Route::resource('tags', 'TagController');
+        Route::resource('comments', 'CommentController');
+        /*Route::resource('users', 'UserController');
+        Route::resource('admins', 'AdminController');
+        Route::resource('posts', 'PostController');
+        Route::resource('images', 'ImageController');
+        Route::resource('videos', 'VideoController');*/
+    });
 });
 
 Auth::routes(['verify' => true]);
@@ -32,4 +33,3 @@ Auth::routes(['verify' => true]);
 Route::get('test', function() {
     return \App\Models\Post::find(2)->tags()->get();
 });
-

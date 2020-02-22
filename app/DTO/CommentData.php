@@ -15,7 +15,7 @@ class CommentData extends DataTransferObject
     /** @var \App\Models\Post $post */
     public $post;
 
-    public function fromRequest(\Illuminate\Http\Request $request): self
+    public static function fromRequest(\Illuminate\Http\Request $request): self
     {
         return new self([
             'content' => $request->input('content'),
