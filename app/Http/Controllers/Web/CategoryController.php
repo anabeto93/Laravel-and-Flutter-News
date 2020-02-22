@@ -19,7 +19,7 @@ class CategoryController extends BaseCategoryController
 
     public function store(Request $request)
     {
-        parent::store($request);
+        $category = parent::store($request);
         return redirect()->to('categories.show', ['id' => $category->id])->with('success', 'Category successfully created.');
     }
 }

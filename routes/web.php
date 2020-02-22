@@ -18,9 +18,9 @@ Route::group(['namespace' => 'Web'], function() {
 
 
     Route::resource('categories', 'CategoryController');
+    Route::resource('tags', 'TagController');
     /*Route::resource('users', 'UserController');
     Route::resource('admins', 'AdminController');
-    Route::resource('tags', 'TagController');
     Route::resource('comments', 'CommentController');
     Route::resource('posts', 'PostController');
     Route::resource('images', 'ImageController');

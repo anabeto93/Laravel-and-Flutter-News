@@ -32,9 +32,9 @@ Route::group(['namespace' => 'API', 'prefix' => 'v1'], function() {
 
     Route::resource('videos', 'VideosController', ['only' => [
         'index', 'show', 'update', 'destroy'
-    ]]);
+    ]]);*/
 
     Route::resource('tags', 'TagsController', ['only' => [
         'index', 'show', 'update', 'destroy'
-    ]]);*/
+    ]]);
 });
