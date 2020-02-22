@@ -16,7 +16,7 @@ Route::group(['namespace' => 'Web'], function() {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::group(['middleware' => ['auth']], function() {
+    Route::group(['middleware' => []], function() {
         Route::resource('categories', 'CategoryController');
         Route::resource('tags', 'TagController');
         Route::resource('comments', 'CommentController');
